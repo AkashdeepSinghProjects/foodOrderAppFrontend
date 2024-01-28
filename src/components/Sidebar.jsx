@@ -1,8 +1,8 @@
 import useFetch from "../hooks/useFetch";
 import { getAllTypes } from "../http";
-export default function Sidebar({ handleClick }) {
+export default function Sidebar({ handleClick, selectedType }) {
   const { isFetching, data: allTypesOfFood, error } = useFetch(getAllTypes, []);
-
+  const cssClass = " capitalize ";
   if (isFetching) {
     return <p className=" text-white text-center text-2xl">Fetching food..</p>;
   }
@@ -16,7 +16,12 @@ export default function Sidebar({ handleClick }) {
           <button
             onClick={() => handleClick(type.type)}
             key={index}
-            className=" capitalize hover:text-black"
+            className={
+              type.type === selectedType
+                ? cssClass + " bg-[#673118] rounded-lg"
+                : cssClass + " hover:text-black "
+            }
+            disabled={type.type === selectedType}
           >
             {type.type}
           </button>

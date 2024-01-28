@@ -16,10 +16,13 @@ export default function Main() {
     setTypeSelection({ typeName: "", queryFn: () => nameQuery(name) });
   }
   return (
-    <main className=" sm:mx-[10%]  my-8 border-8 rounded-lg border-[#FFFFFF]">
+    <main className=" sm:mx-[10%]  my-8 border-8 rounded-lg border-[#FFFFFF] mt-32">
       <SearchBar onSearch={handleSearch} />
       <div className="flex">
-        <Sidebar handleClick={handleClick} />
+        <Sidebar
+          handleClick={handleClick}
+          selectedType={typeSelection.typeName}
+        />
         <Content key={typeSelection.typeName} queryFn={typeSelection.queryFn} />
       </div>
     </main>

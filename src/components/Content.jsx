@@ -16,6 +16,7 @@ export default function Content({ queryFn }) {
         allFoods.map((food) => (
           <Tile
             key={food.id}
+            id={food.id}
             imgSrc={food.image}
             name={food.name}
             price={food.price}
@@ -23,7 +24,6 @@ export default function Content({ queryFn }) {
         ))}
       {allFoods && allFoods.length === 0 && (
         <p className=" text-white text-center text-4xl">
-          {" "}
           No food item found..Search different food item.{" "}
         </p>
       )}

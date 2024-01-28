@@ -1,8 +1,8 @@
 import logo from "../assets/CraveCart-logos.jpeg";
-import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
+import Cart from "./Cart";
 export default function Header() {
   return (
-    <header className="flex justify-between py-8 px-6 h-20 bg-[#FFFFFF]">
+    <header className="flex justify-between py-8 px-6 h-20 bg-[#FFFFFF]  w-[100%] fixed top-[0]">
       <div className=" flex justify-start self-center">
         <img
           className=" w-16 h-16 mx-auto rounded-md "
@@ -14,13 +14,7 @@ export default function Header() {
         </h1>
       </div>
       <div className="flex gap-4 self-center">
-        <button className=" relative ">
-          <ShoppingCartCheckoutIcon fontSize="large" />
-          <p className=" absolute z-10 left-6 top-[-30%] bg-[#FC7753] rounded-full text-white h-6 min-h-fit aspect-square">
-            0
-          </p>
-        </button>
-
+        <Cart />
         <button className=" text-2xl">Log In</button>
       </div>
     </header>
