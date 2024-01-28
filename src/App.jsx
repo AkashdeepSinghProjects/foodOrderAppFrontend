@@ -1,3 +1,12 @@
+import Header from "./components/Header";
+import Main from "./components/Main";
+import CartContextProvider from "./components/CartContext";
+
 export default function App() {
-  return <h1>App</h1>;
+  return (
+    <CartContextProvider>
+      <Header />
+      <Main />
+    </CartContextProvider>
+  );
 }
