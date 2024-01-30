@@ -22,7 +22,7 @@ export default function Content({ queryFn }) {
             price={food.price}
           />
         ))}
-      {allFoods && allFoods.length === 0 && (
+      {!error && allFoods && allFoods.length === 0 && (
         <p className=" text-white text-center text-4xl">
           No food item found..Search different food item.{" "}
         </p>
